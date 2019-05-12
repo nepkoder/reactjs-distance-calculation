@@ -1,0 +1,179 @@
+
+.city-wp button {
+    display: block;
+    width: 200px;
+    text-align: center;
+    padding: 10px 20px;
+    border: none;
+    background-color: #10d04f;
+    color: #fff;
+    font-weight: bold;
+    margin: 0 auto;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.mapouter {
+    margin-top: 10px;
+}
+
+.bk-btn {
+    margin-top: 20px;
+    padding: 6px 20px;
+    border: none;
+    background-color: #10d04f;
+    color: #fff;
+    font-weight: bold;
+    float: right;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Ripple effect */
+
+.ripple {
+    background-position: center;
+    -webkit-transition: background 0.8s;
+    transition: background 0.8s;
+    outline: none;
+}
+
+.ripple:hover {
+    background: #10d04f -webkit-radial-gradient(circle, transparent 1%, #10d04f 1%) center/15000%;
+    background: #10d04f radial-gradient(circle, transparent 1%, #10d04f 1%) center/15000%;
+}
+
+.ripple:active {
+    background-color: #1eaf4d;
+    background-size: 100%;
+    -webkit-transition: background 0s;
+    transition: background 0s;
+}
+
+
+/* form starting stylings ------------------------------- */
+
+.group {
+    position: relative;
+    margin-bottom: 45px;
+}
+
+input {
+    font-size: 18px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.24);
+    background: transparent;
+    color: #fff;
+}
+
+input:focus {
+    outline: none;
+}
+
+
+/* LABEL ======================================= */
+
+label {
+    color: #fff;
+    font-weight: 900;
+    font-size: 16px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 10px;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
+
+
+/* active state */
+
+input:focus~label,
+input:valid~label {
+    top: -20px;
+    font-size: 14px;
+    color: #fff;
+}
+
+
+/* BOTTOM BARS ================================= */
+
+.bar {
+    position: relative;
+    display: block;
+    width: 100%;
+}
+
+.bar:before,
+.bar:after {
+    content: '';
+    height: 2px;
+    width: 0;
+    bottom: 1px;
+    position: absolute;
+    background: #fff;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
+
+.bar:before {
+    left: 50%;
+}
+
+.bar:after {
+    right: 50%;
+}
+
+/* active state */
+
+input:focus~.bar:before,
+input:focus~.bar:after {
+    width: 50%;
+}
+
+/* HIGHLIGHTER ================================== */
+
+.highlight {
+    position: absolute;
+    height: 60%;
+    width: 100px;
+    top: 25%;
+    left: 0;
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+/* active state */
+
+input:focus~.highlight {
+    -webkit-animation: inputHighlighter 0.3s ease;
+    animation: inputHighlighter 0.3s ease;
+}
+
+/* ANIMATIONS ================ */
+
+@-webkit-keyframes inputHighlighter {
+    from {
+        background: #fff;
+    }
+    to {
+        width: 0;
+        background: transparent;
+    }
+}
+
+@keyframes inputHighlighter {
+    from {
+        background: #fff;
+    }
+    to {
+        width: 0;
+        background: transparent;
+    }
+}
